@@ -1,6 +1,10 @@
 pipeline {
     agent any
     stages {
+        stage('Clone repo') {
+        
+            sh 'git clone https://github.com/MurtiMarco/simple-java-maven-app.git'
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
